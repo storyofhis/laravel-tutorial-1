@@ -136,7 +136,6 @@ Route::get('/dashboard',function(){
 
 Route::get("/article", [ArticleController::class, 'index']);
 
-Route::get('/article/{slug}', [ArticleController::class, 'content']);
+// Route::get('/article/{slug}', [ArticleController::class, 'content']);
 
-
-
+Route::get('/article/{article:slug}', [ArticleController::class, 'content']);

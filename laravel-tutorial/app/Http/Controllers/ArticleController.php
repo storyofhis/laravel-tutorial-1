@@ -15,10 +15,11 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function content($slug){
+    public function content(Article $article){
         return view('content', [
-            "post" => Article::find($slug)
+            "article" => $article
         ]);
+        
     }
 
 }
