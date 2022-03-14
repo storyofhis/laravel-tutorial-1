@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ArticleController;
+use App\Models\Category;
 
 
 /*
@@ -139,3 +140,23 @@ Route::get("/article", [ArticleController::class, 'index']);
 // Route::get('/article/{slug}', [ArticleController::class, 'content']);
 
 Route::get('/article/{article:slug}', [ArticleController::class, 'content']);
+
+Route::get('/categories', function(){
+    return view('categories', [
+        'title' => 'Categories',
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('/categories/{category:slug}', function(Category $category){
+    return view('category',[
+        'title' => $category->name,
+        'articles' => $category->articles,
+        'category' => $category->name
+    ]);
+});
+
+
+
+
+
