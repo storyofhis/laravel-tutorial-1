@@ -10,7 +10,7 @@
                 {{ $article->title }}
                 </a>                    
             </h3>
-            <h6>By: {{ $article->author->name }}</h6>
+            <h6>By: <a href="/author/{{ $article->author->slug }}" class="text-decoration-none"> {{ $article->author->name  }} </a></h6>
             <p>{{ $article->excerpt }}</p>
         </article>
     @endforeach

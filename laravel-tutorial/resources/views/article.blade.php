@@ -12,7 +12,7 @@
                 </a>                   
             </h3>
 
-            <h6>By: {{  $article->author->name }} in 
+            <h6>By: <a href="/author/{{ $article->author->slug }}" class="text-decoration-none"> {{ $article->author->name  }} </a> in 
                 <a href="/categories/{{ $article->category->slug }}" class="text-decoration-none"> {{ $article->category->name  }} </a>
             </h6>
 
