@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('container')
-    <h1>Category : {{ $category }}</h1>
+    <h1>Author : {{ $author }}</h1>
 
     @foreach($articles as $article)
         <article class="mb-5">

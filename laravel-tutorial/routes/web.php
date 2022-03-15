@@ -7,7 +7,7 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ArticleController;
 use App\Models\Category;
-
+use App\Models\Author;
 
 /*
 |--------------------------------------------------------------------------
@@ -156,7 +156,13 @@ Route::get('/categories/{category:slug}', function(Category $category){
     ]);
 });
 
-
+Route::get('/author/{author:slug}', function(Author $author){
+    return view('author', [
+        'title' => $author->name,
+        'articles' => $author->articles,
+        'author' => $author->name
+    ]);
+});
 
 
 

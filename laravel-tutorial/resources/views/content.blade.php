@@ -4,7 +4,7 @@
 <article class="mb-5">
     <h3>{{ $article->title }}</h3>
 
-    <h6>By: {{ $article->author }} in 
+    <h6>By: <a href="/author/{{ $article->author->slug }}"> {{ $article->author->name  }} </a>in 
         <a href="/categories/{{ $article->category->slug }}"> {{ $article->category->name  }} </a>
     </h6>
 

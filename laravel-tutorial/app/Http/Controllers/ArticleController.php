@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Category;
 
 class ArticleController extends Controller
 {
@@ -11,7 +12,8 @@ class ArticleController extends Controller
         return view('article', [
             "name" => "Aiffah Kiysa",
             "email" => "aiffah.kiysa@its.ac.id",
-            "articles" =>  Article::all()
+            "articles" => Article::all(),
+            "category" => Category::all()
         ]);
     }
 
