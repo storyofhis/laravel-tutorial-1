@@ -1,8 +1,8 @@
 @extends('template')
 
 @section('container')
-    <h1>Halaman Artikel Berita</h1>
-    <h5>editor: {{ $name }} | {{ $email }}</h5>
+    <h1>{{ $title }}</h1>
+    {{-- <h5>editor: {{ $name }} | {{ $email }}</h5> --}}
     <hr/>
     @foreach($articles as $article)
         <article class="mb-5 border-bottom pb-3">
@@ -12,7 +12,7 @@
                 </a>                   
             </h3>
 
-            <h6>By: <a href="/author/{{ $article->author->slug }}" class="text-decoration-none"> {{ $article->author->name  }} </a> in 
+            <h6>By: <a href="/authors/{{ $article->user->id }}" class="text-decoration-none"> {{ $article->user->name }} </a> in 
                 <a href="/categories/{{ $article->category->slug }}" class="text-decoration-none"> {{ $article->category->name  }} </a>
             </h6>
 
